@@ -48,9 +48,10 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = this.getSharedPreferences(this.getPackageName(), Context.MODE_PRIVATE);
         screenBackground.setBackgroundColor(sharedPreferences.getInt("backgroundColor", Color.LTGRAY));
-        screenText.setText(String.valueOf(sharedPreferences.getInt("countNumber", count)).toString());
-
         count = sharedPreferences.getInt("countNumber", count);
+        screenText.setText(String.valueOf(count));
+
+
 
         countBtn.setOnClickListener(new View.OnClickListener() {
             @Override
